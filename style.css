@@ -1,0 +1,213 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* Latar belakang gradient yang direplikasi berdasarkan gambar */
+    background: radial-gradient(circle at 30% 20%, #4a2135, transparent 40%),
+                radial-gradient(circle at 80% 80%, #293867, #13151f 50%),
+                #1a1924;
+    background-size: cover;
+    background-attachment: fixed;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Bulatan blur untuk menambah efek estetika latar belakang */
+body::before {
+    content: '';
+    position: absolute;
+    top: 5%;
+    left: 45%;
+    width: 450px;
+    height: 450px;
+    background: #9c3349;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.6;
+    z-index: -1;
+}
+
+body::after {
+    content: '';
+    position: absolute;
+    bottom: -10%;
+    right: 20%;
+    width: 400px;
+    height: 400px;
+    background: #4a6bd6;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.5;
+    z-index: -1;
+}
+
+.login-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    z-index: 1;
+}
+
+/* Kotak login berdesain Glassmorphism */
+.login-glass {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    border-radius: 40px;
+    padding: 60px 50px;
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-icon {
+    width: 90px;
+    height: 90px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+    font-size: 45px;
+    color: rgba(255, 255, 255, 0.3);
+    box-shadow: inset 0 0 15px rgba(0,0,0,0.1);
+}
+
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 35px;
+    display: flex;
+    align-items: center;
+}
+
+.input-group i {
+    position: absolute;
+    left: 0;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+}
+
+.input-group input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 10px 10px 10px 35px;
+    color: #fff;
+    font-size: 15px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.input-group input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 300;
+}
+
+.input-group input:focus {
+    border-bottom-color: #fff;
+}
+
+.options-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 45px;
+    font-size: 13px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.remember-me input {
+    margin-right: 8px;
+    accent-color: #4a6bd6; 
+}
+
+.forgot-password {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    font-style: italic;
+}
+
+.forgot-password:hover {
+    color: #fff;
+}
+
+.login-btn {
+    background: linear-gradient(90deg, #401d36 0%, #4862ae 100%);
+    border: none;
+    padding: 16px;
+    border-radius: 12px;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.login-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    filter: brightness(1.1);
+}
+
+/* Style untuk Footer Peringatan */
+.security-warning {
+    width: 100%;
+    background-color: #f7b731; /* Warna kuning peringatan yang cerah */
+    color: #000;
+    text-align: center;
+    padding: 15px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 -4px 15px rgba(0,0,0,0.1);
+}
+
+.security-warning i {
+    font-size: 18px;
+    color: #d35400; /* Warna orange kemerahan untuk icon alert */
+}
+
+@media (max-width: 480px) {
+    .login-glass {
+        padding: 40px 30px;
+    }
+    .security-warning {
+        font-size: 13px;
+        padding: 12px 15px;
+    }
+}
